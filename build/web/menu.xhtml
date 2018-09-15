@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <ui:component>
+         <h:form>  
+    <p:growl id="messages"/>
+
+    <p:menubar style="background: khaki">
+        
+        <c:forEach begin="0" end="${been.menu.size()-1}" var="a">
+            <c:if test="${been.menu.get(a)[1]==1}">
+           <p:menuitem value="${been.menu.get(a)[0]}"  url="${been.menu.get(a)[2]}" icon="${been.menu.get(a)[3]}" style="background: white "/> 
+            </c:if>  
+            <c:if test="${been.menu.get(a)[1]==0}">
+                <p:submenu label="${been.menu.get(a)[0]}" icon="${been.menu.get(a)[3]}" style="background: white">
+                    <c:forEach begin="0" end="${been.sta.size()-1}" var="b">
+                        <c:if test="${been.sta.get(b)[3]==(a+1)}">
+                        <p:menuitem value="${been.sta.get(b)[0]}" url="faces/act.xhtml?n=${b}" />
+                        </c:if>
+                        </c:forEach>
+                </p:submenu>
+            </c:if>
+        </c:forEach>
+        
+          <f:facet name="options">
+            <p:commandButton type="button" value="Quit" icon="ui-icon-extlink" >
+               <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+            </p:commandButton>
+ 
+    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" onclick="window.close()"/>
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+        </f:facet>
+    </p:menubar>  
+</h:form>
+            </ui:component>
+        </h:body>
+
+    </f:view>
+</html>
+

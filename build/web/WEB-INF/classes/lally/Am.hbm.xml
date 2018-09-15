@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Dec, 2016 2:48:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lally.Am" table="am" schema="dbo" catalog="dangal" optimistic-lock="version">
+        <id name="id2" type="int">
+            <column name="id2" />
+            <generator class="foreign">
+                <param name="property">menu</param>
+            </generator>
+        </id>
+        <one-to-one name="menu" class="lally.Menu" constrained="true"></one-to-one>
+        <property name="piclink" type="string">
+            <column name="piclink" length="50" />
+        </property>
+        <property name="vidlink" type="string">
+            <column name="vidlink" length="50" />
+        </property>
+        <property name="text" type="string">
+            <column name="text" length="5000" />
+        </property>
+        <property name="rt" type="string">
+            <column name="rt" length="5000" />
+        </property>
+        <property name="dir" type="string">
+            <column name="dir" length="5000" />
+        </property>
+        <property name="wit" type="string">
+            <column name="wit" length="5000" />
+        </property>
+        <property name="star" type="string">
+            <column name="star" length="5000" />
+        </property>
+    </class>
+</hibernate-mapping>

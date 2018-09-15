@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Dec, 2016 2:48:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lally.Menu" table="menu" schema="dbo" catalog="dangal" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="menu" type="string">
+            <column name="menu" />
+        </property>
+        <property name="issubmenu" type="java.lang.Integer">
+            <column name="issubmenu" />
+        </property>
+        <property name="link" type="string">
+            <column name="link" length="50" />
+        </property>
+        <property name="icon" type="string">
+            <column name="icon" length="50" />
+        </property>
+        <one-to-one name="am" class="lally.Am"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Dangal</title>
+        <h:outputStylesheet library="css" name="amir.css"/>
+    </h:head>
+    <h:body>
+        <div id="pageContainer">
+            <div id="menu">
+                <ui:insert name="menu"/>
+                <ui:include src="menu.xhtml"/>
+            </div>
+            <div id="header">
+                <ui:insert name="header"/>
+                <ui:include src="header.xhtml"/>
+            </div>
+             <div id="content" >
+                <ui:insert name="content"/>
+                <ui:include src="content.xhtml"/>
+            </div>
+             <div id="scrol">
+                <ui:insert name="scrol"/>
+                <ui:include src="scrol.xhtml"/>
+            </div>
+             <div id="footer">
+                <ui:insert name="footer"/>
+                <ui:include src="footer.xhtml"/>
+            </div>
+        </div>
+    </h:body>
+</html>
+

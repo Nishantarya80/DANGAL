@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="master.xhtml" >
+            <ui:define name="content" >
+                <br></br>
+                
+                <f:metadata>
+                    <f:viewParam name="n" value="${been.flag}"/>
+                </f:metadata>
+                <c:set var="a" value="${been.flag}"/>
+                <c:set var="p" value="#{1}"/>
+                <table align="center" cellspacing="10" bgcolor="white">
+                    <tr>
+                        <td><p:graphicImage library="star" name="${been.atr.get(a)[5]}" id="image" height="400" width="270"/></td>
+                        <td>
+                            <table style="text-align:justify;" width="${been.atr.get(a)[2]}">
+                                <tr><td>
+                                        <b>${been.atr.get(a)[0]}</b><br/> 
+                                ${been.atr.get(a)[4]}<br/> 
+                                ${been.atr.get(a)[3]}
+                                    </td></tr>
+                            </table>
+                        </td>
+                        <td>
+                        <table>
+                            <tr>
+                                <td><big>Known For</big></td>
+                            </tr>
+                            
+                                 <c:forEach begin="1" end="${(been.atr.get(a)[8]/2)}">
+                                <tr>
+                              <c:forEach begin="0" end="1">
+                                  <td><p:graphicImage library="star" name="${a+1}.${p}.jpg" height="${been.atr.get(a)[7]}" width="${been.atr.get(a)[6]}" /></td>
+                                   <c:set var="p" value="#{p+1}"/>
+                              </c:forEach>
+                                </tr>
+                            </c:forEach>
+    
+                            
+                            
+                        </table>
+                        </td>    
+                    </tr>
+                </table>
+            </ui:define>
+        </ui:composition>   
+    </h:body>
+</html>
+

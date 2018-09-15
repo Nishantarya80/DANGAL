@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="master.xhtml" >
+            <ui:define name="content" >
+                <br></br>
+                <table align="center" cellspacing="10" bgcolor="white">
+                    <tr>
+                        <td><p:graphicImage library="images" name="${been.abo.get(0)[2]}" id="image" height="400" width="270"/></td>
+                        <td><p:media value="${been.abo.get(0)[3]}" width="600" height="400" player="flash"/></td>
+                        <td>
+                            <table style="text-align:justify;" width="200">
+                                <tr><td>
+                                     PG | 2h 41min <br/>Action, Biography, Drama<br/>22 December 2016 <br/><br/><br/>Director:<br/> Nitesh Tiwari<br/><br/>Writers: <br/>Piyush Gupta, Shreyas Jain<br/>Stars:<br/><br/>Aamir Khan, Sakshi Tanwar,Fatima Sana Shaikh Biographical sports drama on former wrestler Mahavir Singh Phogat and his two wrestler daughters' struggle towards glory at the Commonwealth Games in the face of societal oppression.
+                                    </td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </ui:define>
+        </ui:composition>   
+     </h:body>
+</html>
+
